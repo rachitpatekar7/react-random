@@ -1,16 +1,31 @@
 import "../css/MovieCard.css";
+import { useMovieContext } from "../contexts/MovieContext";
+// This component displays a movie card with the movie poster, title, release date, and a button to add the movie to favourites.
 function MovieCard({movie})
 {
-    function onFavouriteClick()
+    const { addtoFavourites, removeFromFavourites, isFavourite } = useMovieContext();
+    // This function handles the click event on the favourite button.
+    // It checks if the movie is already in favourites and adds or removes it accordingly.
+    const fav = isFavourite(movie.id);
+    // The movie object is passed as a prop to the MovieCard component.
+    function onFavouriteClick(e)
     {
-       alert("clicked"); 
+       e.preventDefault();
+       if(fav)
+       {
+           removeFromFavourites(movie.id);
+       }
+       else
+       {
+           addtoFavourites(movie);
+       }
     }
     return <div className = "movie-card">
         <div className = "movie-poster">
         <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} />
         <div className = "movie-overlay">
-            <button className = "favorite-btn" onClick = {onFavouriteClick}>
-                ❤️
+            <button className = {`favorite-btn ${isFavourite(movie.id) ? "active" : ""}`} onClick = {onFavouriteClick}>
+            ❤︎
             </button>
         </div> 
         </div>
