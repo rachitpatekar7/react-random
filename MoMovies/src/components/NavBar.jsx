@@ -7,7 +7,7 @@ function NavBar() {
       <div className="navbar-brand">
         <Link to="/">MoMovies</Link>
       </div>
-      <div className="navbar-linksnav-link">
+      <div className="navbar-links">
         <Link to="/">Home</Link>
         <Link to="/favourites">Favourites</Link>
       </div>
