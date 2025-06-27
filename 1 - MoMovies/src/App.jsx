@@ -2,6 +2,7 @@ import './css/App.css'
 import NavBar from './components/NavBar'
 // The NavBar component is imported to provide navigation links for the application.
 import Home from './pages/home'
+import './css/animations.css';
 import Favorite from './pages/favourites'
 import { Route, Routes } from 'react-router-dom'
 import { MovieProvider } from './contexts/MovieContext'
@@ -14,8 +15,11 @@ function App() {
   return (
     <MovieProvider>
       <NavBar />
+      
     <main className = "main-content">
-      <Routes> 
+      <h3>  Mo-Movies, No Problems!</h3>
+      <Routes>
+
             <Route path="/" element={<Home />} />
             <Route path="/favourites" element={<Favorite />} />
       </Routes>
@@ -28,7 +32,7 @@ function App() {
 
 
 export default App
-//38:03
+
 //<>
   //    <Home />
     //</> //fragment. acts as a parent element to avoid using an extra div

@@ -1,8 +1,23 @@
+/* ===== APP.CSS - MAIN LAYOUT ===== */
 .main-content {
   flex: 1;
-  padding: 2rem;
+  padding: 3rem 2rem;
   box-sizing: border-box;
   width: 100%;
   display: flex;
   flex-direction: column;
+  position: relative;
+  min-height: calc(100vh - 120px);
+}
+
+.main-content::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent-silver), transparent);
+  opacity: 0.3;
 }

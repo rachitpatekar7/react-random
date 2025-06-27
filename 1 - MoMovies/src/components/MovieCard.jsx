@@ -1,4 +1,6 @@
 import "../css/MovieCard.css";
+import '../css/animations.css';
+
 import { useMovieContext } from "../contexts/MovieContext";
 // This component displays a movie card with the movie poster, title, release date, and a button to add the movie to favourites.
 function MovieCard({movie})

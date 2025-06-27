@@ -1,0 +1,143 @@
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 1200px) {
+  .movies-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 1rem 1.5rem;
+  }
+
+  .navbar-brand {
+    font-size: 1.5rem;
+  }
+
+  .navbar-links {
+    gap: 1.5rem;
+  }
+
+  .nav-link {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+  }
+
+  .main-content {
+    padding: 2rem 1rem;
+  }
+
+  .home {
+    padding: 2rem 0;
+  }
+
+  .search-form {
+    margin-bottom: 2rem;
+    gap: 1rem;
+    padding: 0 1rem;
+  }
+
+  .search-input,
+  .search-button {
+    padding: 0.875rem 1.25rem;
+    font-size: 1rem;
+  }
+
+  .movies-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    padding: 1rem;
+  }
+
+  .movie-card {
+    font-size: 0.9rem;
+  }
+
+  .movie-info {
+    padding: 1.25rem;
+  }
+
+  .favorite-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 1.4rem;
+    top: 1rem;
+    right: 1rem;
+  }
+
+  .favorites {
+    padding: 2rem 1rem;
+  }
+
+  .favorites-empty {
+    padding: 4rem 2rem;
+    margin: 2rem auto;
+  }
+
+  .favorites-empty h2 {
+    font-size: 2rem;
+  }
+
+  .favorites-empty p {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .search-form {
+    flex-direction: column;
+  }
+
+  .search-button {
+    align-self: stretch;
+  }
+
+  .movies-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .navbar-links {
+    gap: 1rem;
+  }
+
+  .nav-link {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* ===== DARK MODE ENHANCEMENTS ===== */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primary-black: #000000;
+    --secondary-black: #0a0a0a;
+    --tertiary-black: #141414;
+  }
+}
+
+/* ===== ACCESSIBILITY ===== */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ===== HIGH CONTRAST MODE ===== */
+@media (prefers-contrast: high) {
+  :root {
+    --glass-border: rgba(255, 255, 255, 0.3);
+    --accent-gold: #ffed4e;
+    --accent-silver: #ffffff;
+  }
+  
+  .movie-card {
+    border-width: 2px;
+  }
+  
+  button {
+    border-width: 2px;
+  }
+}
