@@ -2,10 +2,13 @@ import { useState } from "react";
 interface ListGroupProps {
   items: string[];
   heading: string;
+  // (item: string) => void; //optional callback function to handle item click events
+  onSelectItem: (item: string) => void; 
+  // onSelectItem?: (item: string) => void; //optional callback function to handle item click events
 }
 // ListGroup is a functional component that renders a list of items
 
-function ListGroup({items, heading}: ListGroupProps) {
+function ListGroup({items, heading, onSelectItem}: ListGroupProps) {
   //default value for selected index, -1 means no item is selected
   //Hook is a special function that lets you use state and other React features in functional components
   //useState is a Hook that lets you add state to functional components
@@ -26,7 +29,10 @@ function ListGroup({items, heading}: ListGroupProps) {
         {items.map((item, index) => (
           <li key={item}           
           className={selectedIndex === index ? 'list-group-item active' : 'list-group-item'} 
-          onClick={() => setSelectedIndex(index)}>{item}</li>
+          onClick={() => {
+            setSelectedIndex(index);
+            onSelectItem(item); // Call the onSelectItem function with the clicked item
+          }}>{item}</li>
         ))}
         </ul>
     </>
