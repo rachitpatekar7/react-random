@@ -1,3 +1,4 @@
 Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
 npx create-react-app appname
+npm create vite@latest
 (if scripts disabled in pc)
